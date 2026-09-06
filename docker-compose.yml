@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tz1-app
+    restart: unless-stopped
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/var/www/html
+    environment:
+      DOCKER_DB_HOST: mysql
+      DOCKER_DB_PORT: 3306
+      DB_HOST: mysql
+      DB_PORT: 3306
+    depends_on:
+      - mysql
+
+  queue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tz1-queue
+    restart: unless-stopped
+    command: php artisan queue:work
+    volumes:
+      - .:/var/www/html
+    environment:
+      DOCKER_DB_HOST: mysql
+      DOCKER_DB_PORT: 3306
+      DB_HOST: mysql
+      DB_PORT: 3306
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: tz1-mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - '${DB_PORT:-3307}:3306'
+    environment:
+      MYSQL_DATABASE: '${DB_DATABASE:-tz1}'
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD:-secret}'
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: tz1-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - '${PMA_PORT:-8081}:80'
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD:-secret}'
+    depends_on:
+      - mysql
+
+volumes:
+  db_data:
