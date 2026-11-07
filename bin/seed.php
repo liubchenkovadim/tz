@@ -127,8 +127,8 @@ try {
         $content .= '</ul>';
         $content .= '<p>' . implode('</p><p>', $faker->paragraphs(3)) . '</p>';
 
-        $imageId = 100 + $index;
-        $imageUrl = "https://picsum.photos/id/{$imageId}/800/450";
+        // Deterministic reliable seed URL that never 404s
+        $imageUrl = "https://picsum.photos/seed/{$slug}/800/450";
 
         $viewsCount = random_int(15, 3450);
 
