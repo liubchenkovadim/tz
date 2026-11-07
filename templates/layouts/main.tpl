@@ -11,7 +11,6 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="/" class="site-logo">
-                <span class="logo-icon">⚡</span>
                 <span class="logo-text">CleanPHP<strong>Blog</strong></span>
             </a>
 
@@ -33,7 +32,7 @@
                         </li>
                     {/if}
                     <li class="nav-item">
-                        <a href="/admin" class="nav-link admin-pill">⚙️ Админка</a>
+                        <a href="/admin" class="nav-link admin-pill">Админка</a>
                     </li>
                 </ul>
             </nav>

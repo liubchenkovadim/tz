@@ -12,10 +12,14 @@ use App\Repositories\CategoryRepository;
 class CategoryAdminController
 {
     private CategoryRepository $categoryRepo;
+    private \App\Repositories\PostRepository $postRepo;
 
-    public function __construct(?CategoryRepository $categoryRepo = null)
-    {
+    public function __construct(
+        ?CategoryRepository $categoryRepo = null,
+        ?\App\Repositories\PostRepository $postRepo = null
+    ) {
         $this->categoryRepo = $categoryRepo ?? new CategoryRepository();
+        $this->postRepo = $postRepo ?? new \App\Repositories\PostRepository();
     }
 
     public function index(Request $request): Response
@@ -99,11 +103,14 @@ class CategoryAdminController
             }
         }
 
+        $postsCount = $this->postRepo->countByCategory($id);
+
         $html = View::render('admin/categories/form.tpl', [
-            'pageTitle' => 'Редактирование категории — Админка',
-            'isEdit'    => true,
-            'category'  => $category,
-            'error'     => $error,
+            'pageTitle'  => 'Редактирование категории — Админка',
+            'isEdit'     => true,
+            'category'   => $category,
+            'postsCount' => $postsCount,
+            'error'      => $error,
         ]);
 
         return new Response($html);
