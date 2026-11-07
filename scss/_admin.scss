@@ -141,6 +141,64 @@
 .max-w-700 { max-width: 700px; }
 .max-w-850 { max-width: 850px; }
 
+// Modern 2-Column Editor Layout (fills full width, no empty space)
+.editor-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 1.75rem;
+    align-items: start;
+
+    @media (max-width: 1150px) {
+        grid-template-columns: 1fr;
+    }
+
+    .editor-main {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .admin-card {
+            margin-bottom: 0;
+        }
+    }
+
+    .editor-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .admin-card {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.image-preview-wrapper {
+    margin-top: 0.75rem;
+    border-radius: $radius-sm;
+    overflow: hidden;
+    background: #f1f5f9;
+    border: 1px solid $light-border;
+    max-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: cover;
+    }
+
+    .image-preview-empty {
+        padding: 2rem 1rem;
+        color: $dark-muted;
+        font-size: 0.85rem;
+        text-align: center;
+    }
+}
+
 .admin-card-header {
     padding: 1.25rem 1.5rem;
     border-bottom: 1px solid $light-border;

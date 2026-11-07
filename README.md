@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 Основной функционал
+##  Основной функционал
 
 ### 1. Публичная часть
 - **Главная страница (`/`)**:
@@ -54,7 +54,7 @@
 
 ---
 
-## 🛠 Технологический стек и архитектура
+##  Технологический стек и архитектура
 
 - **PHP 8.2+** (строгая типизация `declare(strict_types=1)`, Enums, Typed Properties, Constructor Promotion).
 - **Smarty 5.4** (шаблонизатор с наследованием `{extends}` / `{block}`, компонентами и безопасным автоэкранированием HTML).
@@ -65,7 +65,7 @@
 
 ---
 
-## 📁 Структура проекта
+##  Структура проекта
 
 ```
 ├── .docker/                   # Конфигурации Nginx и PHP Dockerfile
@@ -116,7 +116,7 @@
 
 ---
 
-## 🚀 Запуск проекта
+##  Запуск проекта
 
 ### Вариант А: Через Docker Compose (Рекомендуемый)
 
@@ -138,10 +138,10 @@
    ```
 
 4. **Откройте сайт в браузере:**
-   - 🌐 Главная страница: [http://localhost:8088](http://localhost:8088)
-   - ⚙️ Панель администратора (Дашборд с Топ-10): [http://localhost:8088/admin](http://localhost:8088/admin)
-   - 📁 Управление категориями: [http://localhost:8088/admin/categories](http://localhost:8088/admin/categories)
-   - 📝 Управление статьями: [http://localhost:8088/admin/posts](http://localhost:8088/admin/posts)
+   -  Главная страница: [http://localhost:8088](http://localhost:8088)
+   -  Панель администратора (Дашборд с Топ-10): [http://localhost:8088/admin](http://localhost:8088/admin)
+   -  Управление категориями: [http://localhost:8088/admin/categories](http://localhost:8088/admin/categories)
+   - Управление статьями: [http://localhost:8088/admin/posts](http://localhost:8088/admin/posts)
 
 ---
 
@@ -182,7 +182,7 @@
 
 ---
 
-## 🎨 Сборка стилей (SCSS)
+##  Сборка стилей (SCSS)
 
 В проекте уже находится скомпилированный файл `public/assets/css/style.css`.
 При изменении исходников в `scss/`:

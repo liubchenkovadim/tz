@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "SCSS styles for pure PHP blog",
   "scripts": {
-    "build:css": "sass scss/main.scss public/assets/css/style.css --no-source-map --style=compressed",
-    "watch:css": "sass --watch scss/main.scss:public/assets/css/style.css"
+    "build:css": "sass scss/main.scss public/assets/css/style.css --no-source-map --style=compressed --silence-deprecation=import,color-functions,global-builtin",
+    "watch:css": "sass --watch scss/main.scss:public/assets/css/style.css --silence-deprecation=import,color-functions,global-builtin"
   },
   "devDependencies": {
     "sass": "^1.77.8"
