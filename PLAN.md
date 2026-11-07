@@ -13,7 +13,9 @@
 ├── public/                    # Web-root (публичная директория)
 │   ├── assets/                # Скомпилированный CSS, изображения
 │   │   └── css/style.css
-│   └── index.php              # Front Controller (единая точка входа)
+│   └── index.php              # Front Controller (минимальная точка входа)
+├── routes/                    # Маршрутизация приложения
+│   └── web.php                # Регистрация всех маршрутов
 ├── src/                       # Исходный код приложения (PSR-4: App\)
 │   ├── Controllers/           # Контроллеры публичной части и админки
 │   │   ├── Admin/             # DashboardController, CategoryAdminController, PostAdminController
@@ -21,6 +23,7 @@
 │   │   ├── CategoryController.php
 │   │   └── PostController.php
 │   ├── Core/                  # Базовое ядро
+│   │   ├── App.php            # Главный жизненный цикл приложения
 │   │   ├── Cache.php          # Обертка над Redis (Predis)
 │   │   ├── Database.php       # Фабрика PDO с Prepared Statements
 │   │   ├── Request.php        # HTTP-запрос (GET, POST, query params)

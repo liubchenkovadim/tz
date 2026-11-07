@@ -77,7 +77,9 @@
 │   └── schema.sql             # SQL-дамп таблиц и индексов
 ├── public/                    # Web-root (публичная директория)
 │   ├── assets/                # Скомпилированные стили (CSS)
-│   └── index.php              # Front Controller (единая точка входа)
+│   └── index.php              # Front Controller (минимальная точка входа)
+├── routes/                    # Маршрутизация приложения
+│   └── web.php                # Определение всех маршрутов
 ├── src/                       # Исходный код приложения (PSR-4: App\)
 │   ├── Controllers/           # Публичные и административные контроллеры
 │   │   ├── Admin/             # DashboardController, PostAdminController, CategoryAdminController
@@ -85,6 +87,7 @@
 │   │   ├── CategoryController.php
 │   │   └── PostController.php
 │   ├── Core/                  # Базовое ядро
+│   │   ├── App.php            # Главный класс приложения
 │   │   ├── Cache.php          # Обертка над Redis (Predis)
 │   │   ├── Database.php       # Фабрика PDO с Prepared Statements
 │   │   ├── Request.php        # HTTP-запрос (GET, POST, query params)

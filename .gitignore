@@ -1,6 +1,7 @@
 /vendor/
 /node_modules/
 .env
+.phpunit.cache/
 /var/templates_c/*
 !/var/templates_c/.gitkeep
 /var/cache/*

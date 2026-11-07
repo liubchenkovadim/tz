@@ -22,6 +22,21 @@ class Response
         return new self('', $statusCode, ['Location' => $url]);
     }
 
+    public function getStatusCode(): int
+    {
+        return $this->statusCode;
+    }
+
+    public function getContent(): string
+    {
+        return $this->content;
+    }
+
+    public function getHeaders(): array
+    {
+        return $this->headers;
+    }
+
     public function send(): void
     {
         http_response_code($this->statusCode);
@@ -33,4 +48,3 @@ class Response
         echo $this->content;
     }
 }
-
