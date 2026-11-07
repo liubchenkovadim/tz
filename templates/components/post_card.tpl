@@ -2,7 +2,7 @@
     <div class="post-card-thumb">
         <a href="/post/{$post.slug}">
             {if !empty($post.image_url)}
-                <img src="{$post.image_url}" alt="{$post.title}" loading="lazy">
+                <img src="{$post.image_url}" alt="{$post.title}" loading="lazy" onerror="this.style.display='none';">
             {else}
                 <div class="thumb-placeholder">📄</div>
             {/if}
